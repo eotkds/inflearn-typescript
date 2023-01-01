@@ -1,0 +1,40 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const enum_language_1 = require("./enum_language");
+const enum_function_1 = require("./enum_function");
+var Fruit;
+(function (Fruit) {
+    Fruit[Fruit["Apple"] = 0] = "Apple";
+    Fruit[Fruit["Banana"] = 5] = "Banana";
+    Fruit[Fruit["Orange"] = 6] = "Orange";
+})(Fruit || (Fruit = {}));
+let v1 = Fruit.Apple;
+let v2 = Fruit.Orange;
+console.log(v1, Fruit.Banana, v2);
+console.log(Fruit.Banana, Fruit["Banana"], Fruit[5]);
+console.log((0, enum_function_1.getIsValidEnumValue)(Fruit, 1));
+console.log((0, enum_function_1.getIsValidEnumValue)(Fruit, 5));
+console.log((0, enum_function_1.getIsValidEnumValue)(Fruit, "Apple"));
+console.log(enum_language_1.Language.English);
+console.log((0, enum_function_1.getIsValidEnumValue)(enum_language_1.Language, "ko"));
+console.log((0, enum_function_1.getIsValidEnumValue)(enum_language_1.Language, "Korean"));
+var DogKind;
+(function (DogKind) {
+    DogKind[DogKind["Maltese"] = 0] = "Maltese";
+    DogKind[DogKind["Retriever"] = 5] = "Retriever";
+    DogKind[DogKind["Shiba"] = 6] = "Shiba";
+})(DogKind || (DogKind = {}));
+let dog1 = DogKind.Maltese;
+let dog2 = DogKind.Retriever;
+let dog3 = DogKind.Shiba;
+console.log(dog1, dog2, dog3);
+var DogKind1;
+(function (DogKind1) {
+    DogKind1["Maltese"] = "maltese";
+    DogKind1["Retriever"] = "retriever";
+    DogKind1["Shiba"] = "shiba";
+})(DogKind1 || (DogKind1 = {}));
+let dog4 = DogKind1.Maltese;
+let dog5 = DogKind1.Retriever;
+let dog6 = DogKind1.Shiba;
+console.log(dog4, dog5, dog6);
