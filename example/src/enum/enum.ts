@@ -11,12 +11,16 @@ enum Fruit {
 let v1: Fruit.Apple = Fruit.Apple;
 let v2: Fruit.Banana | Fruit.Orange = Fruit.Orange;
 
-console.log(v1, Fruit.Banana, v2);
+/* enum객체는 기본값 0부터 숫자 값이 있는 경우 할당, 다음 없을 경우 +1 */
+console.log(v1, Fruit.Banana, v2); // 0 5 6
+
+/* 숫자일 경우 양바향 맵핑, 문자일 경우 단 반향 맵핑 */
 console.log(Fruit.Banana, Fruit["Banana"], Fruit[5]);
+
 // console.log(Object.keys(Fruit).filter((key) => isNaN(Number(key))));
-console.log(getIsValidEnumValue(Fruit, 1));
-console.log(getIsValidEnumValue(Fruit, 5));
-console.log(getIsValidEnumValue(Fruit, "Apple"));
+console.log(getIsValidEnumValue(Fruit, 1)); // false
+console.log(getIsValidEnumValue(Fruit, 5)); // true
+console.log(getIsValidEnumValue(Fruit, "Apple")); // false ; 아이템의 이름이기 때문에
 
 // console.log(Language.English);
 
