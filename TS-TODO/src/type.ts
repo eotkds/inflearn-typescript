@@ -23,4 +23,9 @@ export interface ActionNewTodo {
   priority: Priority;
 }
 
-export type Action = ActionNewTodo; // 나중에 유니온 타입으로 묶을 예정
+export interface ActionDeleteTodo {
+  type: 'deleteTodo';
+  id: number;
+}
+
+export type Action = ActionNewTodo | ActionDeleteTodo; // 나중에 유니온 타입으로 묶을 예정
